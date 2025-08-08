@@ -11,7 +11,7 @@ const getLaunch = async () => {
     const yearSelected = launchyearElement.value;
     infoLaunchContainerElement.textContent = '';
     const res = await fetch(
-      'https://' + falconwatch - app - ryu7 + 'api.spacexdata.com/v3/launches'
+      'https://' + 'falconwatch-app-ryu7' + 'api.spacexdata.com/v3/launches'
     );
     const data = await res.json();
     data.forEach((launch) => {
