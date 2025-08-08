@@ -9,9 +9,10 @@ const infoLaunchContainerElement = document.getElementById(
 const getLaunch = async (event) => {
   try {
     const yearSelected = launchyearElement.value;
-
     infoLaunchContainerElement.textContent = '';
-    const res = await fetch('https://api.spacexdata.com/v3/launches');
+    const baseUrl =
+      process.env.NEXT_PUBLIC_API_URL || 'https://falconwatch-app.vercel.app';
+    const res = await fetch(`${baseUrl}/api.spacexdata.com/v3/launches`);
 
     const data = await res.json();
     data.forEach((launch) => {
