@@ -6,14 +6,13 @@ const infoLaunchContainerElement = document.getElementById(
   'info_launch_container'
 );
 
-const getLaunch = async (event) => {
+const getLaunch = async () => {
   try {
     const yearSelected = launchyearElement.value;
     infoLaunchContainerElement.textContent = '';
-    const baseUrl =
-      process.env.NEXT_PUBLIC_API_URL || 'https://falconwatch-app.vercel.app';
-    const res = await fetch(`${baseUrl}/api.spacexdata.com/v3/launches`);
-
+    const res = await fetch(
+      'https://' + falconwatch.vercel.app + 'api.spacexdata.com/v3/launches'
+    );
     const data = await res.json();
     data.forEach((launch) => {
       if (launch.launch_year === yearSelected) {
