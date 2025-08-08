@@ -50,13 +50,17 @@ select {
 }
 
 .search_button {
-  cursor: pointer;
   font-size: 0.8rem;
   text-decoration: none;
   color: var(--txt-color);
   padding: 0.5em 1em;
   border-radius: 20px;
   border: 1px solid var(--btn-color);
+}
+
+.search_button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0.75rem var(--txt-color);
 }
 
 .info_launch_container {
