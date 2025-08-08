@@ -7,12 +7,13 @@ const infoLaunchContainerElement = document.getElementById(
 );
 
 const getLaunch = async (event) => {
-  const yearSelected = launchyearElement.value;
   try {
+    const yearSelected = launchyearElement.value;
+
     infoLaunchContainerElement.textContent = '';
     event.preventDefault();
     const res = await fetch('https://api.spacexdata.com/v3/launches');
-    res.setHeader('Access-Control-Allow-Origin', '*');
+
     const data = await res.json();
     data.forEach((launch) => {
       if (launch.launch_year === yearSelected) {
@@ -31,4 +32,4 @@ const getLaunch = async (event) => {
     console.log('Error');
   }
 };
-searchButtonElement.addEventListener('click', getLaunch);
+searchButtonElement.addEventListener('touch', getLaunch);
