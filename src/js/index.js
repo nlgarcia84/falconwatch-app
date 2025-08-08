@@ -32,4 +32,4 @@ const getLaunch = async (event) => {
     console.log('Error');
   }
 };
-searchButtonElement.addEventListener('touch', getLaunch);
+searchButtonElement.addEventListener('click', getLaunch);
