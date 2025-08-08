@@ -26,6 +26,4 @@ const getLaunch = async (event) => {
     console.log('Error');
   }
 };
-searchButtonElement.addEventListener('touchstart', getLaunch, {
-  passive: false,
-});
+searchButtonElement.addEventListener('click', getLaunch);
