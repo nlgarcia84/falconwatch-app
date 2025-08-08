@@ -11,7 +11,6 @@ const getLaunch = async (event) => {
     const yearSelected = launchyearElement.value;
 
     infoLaunchContainerElement.textContent = '';
-    event.preventDefault();
     const res = await fetch('https://api.spacexdata.com/v3/launches');
 
     const data = await res.json();
