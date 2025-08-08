@@ -12,6 +12,7 @@ const getLaunch = async (event) => {
     infoLaunchContainerElement.textContent = '';
     event.preventDefault();
     const res = await fetch('https://api.spacexdata.com/v3/launches');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const data = await res.json();
     data.forEach((launch) => {
       if (launch.launch_year === yearSelected) {
