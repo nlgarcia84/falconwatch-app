@@ -59,6 +59,7 @@ select {
   font-size: 0.8rem;
   text-decoration: none;
   color: var(--txt-color);
+  background-color: transparent;
   padding: 0.5em 1em;
   border-radius: 20px;
   border: 1px solid var(--btn-color);
