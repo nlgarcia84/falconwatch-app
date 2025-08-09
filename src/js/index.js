@@ -8,21 +8,22 @@ const infoLaunchContainerElement = document.getElementById(
 
 const getLaunch = async () => {
   try {
-    const yearSelected = launchyearElement.value;
     infoLaunchContainerElement.textContent = '';
-    const res = await fetch('https://api.spacexdata.com/v3/launches');
+    const yearSelected = launchyearElement.value;
+    const res = await fetch('https://api.spacexdata.com/v4/launches');
     const data = await res.json();
+    console.dir(data);
     data.forEach((launch) => {
-      if (launch.launch_year === yearSelected) {
+      if (launch.date_utc.slice(0, 4) === yearSelected) {
         const missionName = document.createElement('div');
         const missionDate = document.createElement('div');
         const missionPatch = document.createElement('img');
         infoLaunchContainerElement.appendChild(missionName);
         infoLaunchContainerElement.appendChild(missionDate);
         infoLaunchContainerElement.appendChild(missionPatch);
-        missionName.textContent = `Mission Name: ${launch.mission_name}`;
-        missionDate.textContent = `Date: ${launch.launch_date_utc}`;
-        missionPatch.src = launch.links.mission_patch_small;
+        missionName.textContent = `Mission Name: ${launch.name}`;
+        missionDate.textContent = `Date: ${launch.date_utc}`;
+        missionPatch.src = launch.links.patch.small;
       }
     });
   } catch (error) {
