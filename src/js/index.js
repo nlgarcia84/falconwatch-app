@@ -12,6 +12,7 @@ const getLaunch = async () => {
     const yearSelected = launchyearElement.value;
     const res = await fetch('https://api.spacexdata.com/v4/launches');
     const data = await res.json();
+    res.setHeader('Access-Control-Allow-Origin', '*');
     console.dir(data);
     data.forEach((launch) => {
       if (launch.date_utc.slice(0, 4) === yearSelected) {
