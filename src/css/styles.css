@@ -37,7 +37,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
 }
 
 .logo_image {
@@ -46,6 +46,7 @@ select {
   background-image: url(../assets/images/logo_spacex.png);
   background-size: contain;
   background-repeat: no-repeat;
+  margin-bottom: 2em;
 }
 
 .search_container {
@@ -99,4 +100,22 @@ select {
 
 .footer_text {
   font-size: 0.7rem;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* estilos para tabletas */
+  .general_container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* estilos para escritorio */
+  .general_container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
