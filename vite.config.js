@@ -7,10 +7,10 @@ const finalFolder = '../docs';
 // const finalFolder = '../dist';
 
 export default defineConfig({
-  base: '',
+  base: './',
   root: 'src',
   build: {
     outDir: finalFolder,
-    emptyOutDir: true
-  }
+    emptyOutDir: true,
+  },
 });
