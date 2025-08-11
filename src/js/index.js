@@ -1,5 +1,3 @@
-import '../css/styles.css';
-
 const launchyearElement = document.getElementById('launch-year');
 const searchButtonElement = document.getElementById('search_button');
 const infoLaunchContainerElement = document.getElementById(
