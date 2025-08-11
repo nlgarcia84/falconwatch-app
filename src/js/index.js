@@ -6,13 +6,17 @@ const infoLaunchContainerElement = document.getElementById(
   'info_launch_container'
 );
 
+const videoLinks = {
+  2006: 'https://www.youtube.com/watch?v=FIYMTfjhPgI',
+};
+
 const getLaunch = async () => {
   try {
     infoLaunchContainerElement.textContent = '';
     const yearSelected = launchyearElement.value;
     const res = await fetch('https://api.spacexdata.com/v4/launches');
     const data = await res.json();
-    console.dir(data);
+
     data.forEach((launch) => {
       if (launch.date_utc.slice(0, 4) === yearSelected) {
         const missionName = document.createElement('div');
