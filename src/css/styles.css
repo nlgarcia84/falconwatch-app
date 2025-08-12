@@ -30,6 +30,7 @@ select {
 .general_container {
   text-align: center;
   padding: 2em;
+  margin-bottom: 2em;
 }
 
 .header_container {
